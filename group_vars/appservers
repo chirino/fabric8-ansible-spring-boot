@@ -4,17 +4,17 @@
 
 # App name
 app_name: 'springboot-camel'
-
-app_owner: '{{ app_name }}'
-app_group: '{{ app_name }}'
+app_version: '2.2.98-SNAPSHOT'
 
 app_classifier: ''
+app_package: '{{ app_name }}-{{ app_version }}{{ app_classifier }}.jar'
+app_url: 'https://oss.sonatype.org/content/repositories/snapshots/io/fabric8/quickstarts/{{ app_name }}/2.2.98-SNAPSHOT/{{ app_name }}-2.2.98-20160215.122740-2.jar'
 
 # App home directory
+app_owner: '{{ app_name }}'
+app_group: '{{ app_name }}'
 app_home: '/opt/{{ app_name }}-{{ app_version }}{{ app_classifier }}'
 
-# App version
-app_version: '2.2.98-SNAPSHOT'
 
 # Port on which web applications are served on appservers
 app_port: 8080

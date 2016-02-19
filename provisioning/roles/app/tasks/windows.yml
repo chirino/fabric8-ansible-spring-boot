@@ -1,0 +1,14 @@
+---
+# Checks whether App home directory already exists
+- name: Check if App is already installed
+  win_stat: path=c:\opt\{{app_package}}
+  register: app_installed
+
+- name: Create the C:\opt 
+  win_file: path=c:\opt state=directory
+  when: not app_installed.stat.exists
+
+# Download App package
+- name: Download App
+  win_get_url: url={{ app_url }} dest=c:\opt\{{app_package}}
+  when: not app_installed.stat.exists
